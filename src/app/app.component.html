@@ -17,10 +17,18 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
-        <ion-item>
-          <ion-button slot="end" (click)="logout()"> Logout</ion-button>
-        </ion-item>
       </ion-content>
+      <ion-footer>
+        <ion-toolbar>
+            <ion-button
+                fill="outline"
+                color="primary"
+                (click)="logout()"
+            >
+                Logout
+            </ion-button>
+        </ion-toolbar>
+    </ion-footer>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
