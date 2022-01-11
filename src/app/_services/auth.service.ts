@@ -22,7 +22,12 @@ export class AuthService {
 
   async createUserWithEmailAndPassword (user: User, redirectToURL?: string) {
     return this.afAuth.createUserWithEmailAndPassword(user.email, user.password)
-    .then((result) => {
+    .then(async (result) => {
+      const afuser = await this.afAuth.user.toPromise();
+      afuser.displayName = user.displayname;
+
+      this.afAuth.updateCurrentUser(afuser);
+
       window.alert('You have been successfully registered!');
       this.router.navigate(['/' + redirectToURL]);
     }).catch((error) => {

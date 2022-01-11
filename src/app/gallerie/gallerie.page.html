@@ -7,10 +7,6 @@
 
 <ion-content class="ion-padding">
   <ion-grid>
-      <ion-item *ngFor="let img of imgList | async; index as i" scrollY="false" >
-          <div class="spacer">
-            <ion-img [src]="img.imgurl" width="100%"></ion-img>
-          </div>                                             
-      </ion-item>
+            <ion-img [src]="img.imgurl" width="40%" *ngFor="let img of imgList | async; index as i"></ion-img>                                             
   </ion-grid>
 </ion-content>
